@@ -1,0 +1,22 @@
+services:
+  rust_app:
+    build:
+      context: ./sdv-api
+      dockerfile: Dockerfile
+    container_name: rust_app_container
+    ports:
+      - "8001:8001"  # Ajustez le port selon votre application Rust
+    volumes:
+      - ./sdv-api:/app  # Monte le répertoire courant dans le conteneur
+
+  node_app:
+    build:
+      context: ./sdv-web
+      dockerfile: Dockerfile
+    container_name: node_app_container
+    ports:
+      - "3001:3000"  # Ajustez le port selon votre application Node.js
+    environment:
+      - API_URL=https://api:8001
+    volumes:
+      - ./sdv-web:/app  # Monte le répertoire courant dans le conteneur
