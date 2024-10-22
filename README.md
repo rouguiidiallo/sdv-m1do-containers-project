@@ -47,3 +47,11 @@ Run `npm run build` to build the application, and run `npm run start` to start t
 #### Using Docker
 
 > TODO
+>
+> WEB:
+  --Dockerfile: construit l'image du front
+> API
+  --Dockerfile: qui permet de construire l'image du back
+> Docker compose: docker-compose up permettant de construire et de lancer les conteneurs
+>
+> ci.yml se trouvant dans .github/workflows permettant de lancer un pipeline 
